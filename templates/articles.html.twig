@@ -1,0 +1,28 @@
+
+
+{% for doc in docs %}
+        <div class="article">
+                <div class="row justify-content-md-center">
+                        <div class="col-md-4">
+                                <a style="color: inherit;text-decoration: none;" href="{{doc.url}}">
+                                        <div class="bs-component" style="white-space: pre-line">
+                                                <div class="card mb-3">
+                                                        <div class="card-body">
+                                                                <h2 class="card-title">{{ doc.title }}</h2>
+                                                        </div>
+                                                        <img class="fit-picture" src="{{ doc.image_url }}" alt="Image not found">
+                                                        <div class="card-body">
+                                                                <p class="card-text"><b>{{ doc.rubrique }}</b> - {{ doc.teaser }}</p>
+                                                        </div>
+                                                        <div class="card-footer text-muted">
+                                                                {{ doc.date }}
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </a>
+                        </div>
+                </div>
+        </div>
+{% endfor %}
+
+</div>
