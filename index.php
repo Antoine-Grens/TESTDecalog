@@ -22,13 +22,6 @@ $stop = 1;
 $i = 0;
 foreach($docs as $doc){
 
-	if(!isset($doc['ss_theme'][0])){
-		echo '<pre>';
-		var_dump($doc);
-		echo '</pre>';
-		exit;
-	}
-
 	$date = $doc['timestamp'];
 	$exploded = explode('T', $date);
 	$dateFinal = date('d/m/Y', strtotime($exploded[0]));
@@ -49,4 +42,5 @@ foreach($docs as $doc){
 
 echo $twig->render('header.html.twig', array());
 echo $twig->render('articles.html.twig', array('docs' => $myDocs));
+echo $twig->render('footer.html.twig', array());
 
